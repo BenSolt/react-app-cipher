@@ -1,0 +1,75 @@
+
+input,
+textarea{
+
+		display: block;
+		width: 100%;
+		padding: 10px;
+		border: 2px solid black;
+		margin: 0 0 20px;
+		background: white;
+		color: black;
+		outline: none;
+	}
+
+	textarea:hover,
+	textarea:focus{
+		border: 2px solid black;
+		background: white;
+		color: black;
+		
+	}
+textarea{
+	height: 100px;
+}
+button{
+		display: inline-block;
+		padding: 10px 30px;
+		border: none;
+		margin: 0 0 20px;
+		background:lightblue;
+		outline: none;
+		transition: transition;
+		margin: 0 10px;
+}
+
+button:hover,
+button:focus{
+	background: rgb(91, 91, 255);
+}
+
+.ciphering-form{
+	width: 350px;
+	margin: 40px auto 100px;
+}
+.submit-ctn{
+	text-align: center;
+}
+.button-spacer{
+	display: inline-block;
+	padding: 10px 0 10px 4px;
+}
+.cypher-text{
+	display: block;
+	padding: 10px 30px;
+	border: none;
+	margin: 0 0 20px;
+	text-align: center;
+	background: #fff;
+	outline: none;
+    word-break: break-word;
+    border: 2px solid black;
+}
+
+/* .final-cipher{
+		display: none;
+		opacity: 0;
+	}
+	.message-ready {
+		display: block;
+	}
+	.show-message {
+		opacity: 1;
+	} */
+
+	

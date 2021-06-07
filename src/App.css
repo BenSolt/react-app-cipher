@@ -61,4 +61,10 @@ code:after {
 
 .PageLayout{
   display: flex;
+  flex-direction: column;
+}
+
+.declar2{
+  display: flex;
+  flex-wrap: wrap;
 }
