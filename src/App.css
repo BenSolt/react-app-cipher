@@ -68,3 +68,10 @@ code:after {
   display: flex;
   flex-wrap: wrap;
 }
+
+/* /////////////////////////////// */
+
+.selectform{
+  height: 35px;
+  border: 2px solid black;
+}

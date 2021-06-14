@@ -22,7 +22,6 @@ function BookCipher() {
         var form = $(".ciphering-form")
         var message = form.find("input").val();
         var key = form.find("textarea").val();
-        //showMessage(decypherText(message, key));
         showMessage(decypherText(message, key));
     }
 
@@ -39,29 +38,31 @@ function BookCipher() {
         return cypheredText.substring(0, cypheredText.length - 1)
     }
 
+  
     function decypherText(a, b) {
         var text = a.split(",");
         var decypheredText = "";
-        var cryptic = b.split(" ");
+        //var cryptic = b.split(" ");
+
         for (var i = 0; i < text.length; i++) {
+            //decypheredText += cryptic[a-1][0]
             decypheredText += b.charAt(text[i] - 1);
-            //cryptic[i][0]
+            //console.log(text[i],cryptic[a-1])
         }
         return decypheredText
     }
-
 
     function cypherLetter(a, b) {
         //var cryptic = b.split("");
         var cryptic = b.split(" ");
         for (var i = 0; i < cryptic.length; i++) {
-            //if (a === cryptic[i]) {
+            
+            // if message  is equal to key
             if (a === cryptic[i][0]) {
                 return (i + 1) + ",";
             }
         }
     }
-
 
 
     function showMessage(message) {
@@ -92,7 +93,7 @@ function BookCipher() {
 
                 <h3>Message or Cipher</h3>
                 <input
-                    placeholder="Happy Holidays!"
+                    placeholder="Enter Message or Cipher"
                     value={text1}
                     onChange={changeHandler}
                 />
@@ -109,17 +110,14 @@ function BookCipher() {
                 <button onClick={CipherBtn} className="cipher-btn">Cipher</button>
 
                 <button onClick={DecipherBtn} className="decipher-btn">Decipher</button>
-
-                {/* <div className="final-cipher">
-                    <h3>Results</h3>
-                    <div className="cypher-text"> Cipher Message</div>
-                </div> */}
+            
 
                 <div className="final-cipher">
                 <h3>Results</h3>
                     <textarea className="cypher-text"
                         placeholder="Cipher Message"
                     />
+                 
                 </div>
 
             </div>
