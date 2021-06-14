@@ -21,12 +21,22 @@ function YouTubeTut() {
     };
 
     function cypherText(a, b) {
-        var text = a.split("");
+        var text = a.toLowerCase();
         var cypheredText = "";
         for (var i = 0; i < text.length; i++) {
-            cypheredText += cypherLetter(text[i], b);
+       
+            var letter = cypherLetter(text[i], b);
+
+            if (letter === undefined) {
+               continue
+            }
+
+            if (i === text.length - 1) {
+                cypheredText += letter
+            } else {
+                cypheredText += letter + ","
+            }
         }
-        //return cypheredText.substring(0, cypheredText.length - 1)
         return cypheredText
     }
 
@@ -34,32 +44,35 @@ function YouTubeTut() {
 
 //If key is equal to message..
     function decypherText(a, b) {
-        var text = a.split(",");
+        // 3,1
+        var numbers = a.split(",");
         var decypheredText = "";
-        var cryptic = b.split(" ");
-        var aaa = "";
+        //t,w
+        var cryptic = b.toLowerCase().split(" ");
 
-        for (var i = 0; i < text.length; i++) {
+        for (var i = 0; i < numbers.length; i++) {
+            var number = numbers[i];
+            var word = cryptic[number - 1];
 
-           //decypheredText += cryptic[a - 1] + ",";
+           decypheredText += word[0];
             
-            decypheredText += b.charAt(text[i] - 1);
-            console.log(text[i])
+            //decypheredText += b.charAt(text[i] - 1);
         }
-        return decypheredText
+        return decypheredText;
     }
 
 
     function cypherLetter(a, b) {
         //var cryptic = b.split("");
-        var cryptic = b.split(" ");
+        var cryptic = b.toLowerCase().split(" ");
         for (var i = 0; i < cryptic.length; i++) {
-
-            // if message  is equal to key
+            
             if (a === cryptic[i][0]) {
-                return (i + 1) + ",";
+                return (i + 1) + "";  
             }
         }
+        // character not found in input text
+        return undefined
     }
 
     // function CipherBtn() {
