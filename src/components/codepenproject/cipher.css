@@ -96,13 +96,17 @@ button:focus{
 	
 	}
 
-	.ciphering-form2{
-		margin: 20px auto 20px;
-		width: 90%;
-	}
-
 	.textResult{
 	border: 2px solid black;
 	}
 
+	/* RIDDLE FORM */
+
+
+	.body1{
+		margin: 5% 20%;
+		padding: 5px;
+		/* border: 2px solid black; */
+	}
 	
+	/* END RIDDLE FORM */
